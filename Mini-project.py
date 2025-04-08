@@ -1,6 +1,6 @@
 def conditions():
     a = 0
-    a1 = input("1) Is PE ratio less than 30 ? \n")
+    a1 = input()
     if a1 == 'yes':
         a = a+1
     a2 = input("2) Is net profit increasing ? \n")
@@ -26,6 +26,7 @@ def conditions():
     if c1 == 'yes':
         c = c+1
     c2 = input("8) Read pros and cons if pros maximun then type 'yes' else 'no' \n")
+
     if c2 == 'yes':
         c = c+1
    
