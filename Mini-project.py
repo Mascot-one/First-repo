@@ -1,3 +1,30 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+def PE_ratio(url):
+    fakeheader = {'User-Agent': 'Mozilla/5.0'}
+    response = requests.get(url, headers=fakeheader)
+
+    if response.status_code != 200:
+        print("Failed to fetch data.")
+        return
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    
+    list_elements = soup.find_all('li', class_='flex flex-space-between')
+
+    for block in list_elements:
+        name = block.find('span', class_='name')
+        value = block.find('span', class_='number')
+        if name and 'P/E' in name.text:
+            ratio = value.text.strip()
+            return ratio
+
+    print("Could not find P/E Ratio on the page.")
+
+
 def conditions():
     a = 0
     a1 = input()
@@ -43,6 +70,8 @@ if (read == 'start'):
     n = int(input("How many stocks u want in your portfolio\n"))
     url = input("Paste Screener.in stock URL: ").strip()
     if "https://www.screener.in/company/" in url:
+        a1 = PE_ratio(url)
+        print("P/E Ratio : ",a1)
         i = 1
         while i <= n :
                 print("=== STOCK NO.",i,"===")
