@@ -42,12 +42,17 @@ read = input("~~~~~~STEPS~~~~~~\n 1)Open any browser\n 2)Search 'Screener.com' a
 if (read == 'start'):
     n = int(input("How many stocks u want in your portfolio\n"))
     url = input("Paste Screener.in stock URL: ").strip()
-    
-    i = 1
-    while i <= n :
-            print("=== STOCK NO.",i,"===")
-            print("Type answers only in 'yes' or 'no'")
-            conditions()
-            i += 1
+    if "https://www.screener.in/company/" in url:
+        i = 1
+        while i <= n :
+                print("=== STOCK NO.",i,"===")
+                print("Type answers only in 'yes' or 'no'")
+                conditions()
+                i += 1
+       
+    else :
+        print("Invalid Screener URL. please paste it correct")
+
+  
 else :
-    print("Read again")            
+    print("Read again")
