@@ -49,7 +49,10 @@ def Market_cap(url):
 def conditions(a1):
     
     a = 0
-    if a1 <= '35' :
+    b = 0
+    c = 0
+    
+    if (a1 <= '35') :
         a = a+1
     a2 = input("1) Is net profit increasing ? \n")
     if a2 == 'yes':
@@ -58,29 +61,38 @@ def conditions(a1):
     if a3 == 'yes':
         a = a+1
 
-    b = 0
-    b1 = input("3) Is the cash flow positive ? \n")
-    if b1 == 'yes':
-        b = b+1
-    b2 = input("4) Check Debt to Equity ratio less than 2 \n")
-    if b2 == 'yes':
-        b = b+1
-    b3 = input("5) Check the intrinsic value nearby it's stock price  \n")
-    if b3 == 'yes':
-        b = b+1
+    
+    if (a == 3) :
+        b1 = input("3) Is the cash flow positive ? \n")
+        if b1 == 'yes':
+            b = b+1
+        b2 = input("4) Check Debt to Equity ratio less than 2 \n")
+        if b2 == 'yes':
+            b = b+1
+        b3 = input("5) Check the intrinsic value nearby it's stock price  \n")
+        if b3 == 'yes':
+            b = b+1
+    else :
+        print("This stock is not fundamentally strong check another one")
+        return
+    
+    if (b >= 2) :
+        c1 = input("6) Sector wise and marketcap wise, is the stock standing in top 3 ? \n")
+        if c1 == 'yes':
+            c = c+1
+        c2 = input("7) Read pros and cons if pros maximun then type 'yes' else 'no' \n")
+        if c2 == 'yes':
+            c = c+1
+    else :
+        print("This stock is not fundamentally strong check another one")
+        return
 
-    c = 0
-    c1 = input("6) Sector wise and marketcap wise, is the stock standing in top 3 ? \n")
-    if c1 == 'yes':
-        c = c+1
-    c2 = input("7) Read pros and cons if pros maximun then type 'yes' else 'no' \n")
-    if c2 == 'yes':
-        c = c+1
-   
-    if (a == 3 and b >= 2 and c >= 1):
-        print("You can add this stock in your bascket")
-    else:
+    if(c >= 1) :
+        print("YOU CAN ADD THIS STOCK IN YOUR BASCKET")
+    else :
         print("This stock is not fundamentally strong check another one")    
+        return
+    
 
 print("===STOCKS ANALYSING TOOL===\n")
 print("Check your fav stocks Fundamentally with zero knowlwgde\nand make your own portfolio bascket")
