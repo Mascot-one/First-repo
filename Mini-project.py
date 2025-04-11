@@ -40,7 +40,7 @@ def Market_cap(url):
     market_cap = soup.find('span', class_='number')
     if market_cap:
         total = market_cap.text.strip()
-        print(f"Total Market cap: {total}")
+        print("Total Market cap : ",total)
     else:
         print("Market cap not found on the page.")
 
