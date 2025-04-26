@@ -97,7 +97,7 @@ def conditions(a1):
 print("===STOCKS ANALYSING TOOL===\n")
 print("Check your fav stocks Fundamentally with zero knowlwgde\nand make your own portfolio bascket")
 
-read = input("~~~~~~STEPS~~~~~~\n 1)Open any browser\n 2)Search 'Screener.com' and open the website\n 3)Search your fav stocks and copy the URL and paste here\n 4)Check given all conditions step by step with the help of website\n 5)If you read all then type 'start'\n")
+read = input("~~~STEPS~~~\n 1)Open any browser\n 2)Search 'Screener.com' and open the website\n 3)Search your fav stocks and copy the URL and paste here\n 4)Check given all conditions step by step with the help of website\n 5)If you read all then type 'start'\n")
 if (read == 'start'):
     n = int(input("How many stocks u want in your portfolio\n"))
     url = input("Paste Screener.in stock URL: ").strip()
